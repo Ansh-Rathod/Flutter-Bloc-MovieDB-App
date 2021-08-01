@@ -1,4 +1,4 @@
-# TiViBu
+# MovieDB
 
 A new Flutter project.
 
