@@ -23,8 +23,7 @@
 
 **Packages used:**
 
-
-  bottom_nav_bar:
+-  bottom_nav_bar:
  ```
    git:
       url: https://github.com/Ansh-Rathod/bottom_nav_bar
