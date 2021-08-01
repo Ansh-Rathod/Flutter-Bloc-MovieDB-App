@@ -9,7 +9,7 @@
    <application 
         android:requestLegacyExternalStorage="true"
         android:name="io.flutter.app.FlutterApplication"
-        android:label="amd"
+        android:label="MovieDB"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

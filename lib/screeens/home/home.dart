@@ -82,6 +82,10 @@ class Home extends StatelessWidget {
                       color: Colors.cyanAccent, size: 20),
                 ),
                 ListTile(
+                  onTap: () {
+                    launch(
+                        'https://github.com/Ansh-Rathod/Flutter-Bloc-TiViBu-App');
+                  },
                   title: Text(
                     'Share my app',
                     style: normalText.copyWith(
