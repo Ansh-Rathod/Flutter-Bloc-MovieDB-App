@@ -79,3 +79,4 @@ $ flutter packages get
 # Run the app
 $ flutter run
 ```
+**Download _.apk_ file from [Here](https://mega.nz/file/ex1QFYYY#z6v1wTbPeMevo84jYjsGFQvWjlRTyPGXbrVL1_dMVZM)**
