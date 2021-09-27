@@ -1,4 +1,4 @@
-# MovieDB
+# MovieDB App
 
 ## App Features.
 - **Dynamic Theming**
