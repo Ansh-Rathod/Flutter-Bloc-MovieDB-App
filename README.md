@@ -1,5 +1,6 @@
 # MovieDB App
 
+
 ## App Features.
 - **Dynamic Theming**
 - Search Functionality
