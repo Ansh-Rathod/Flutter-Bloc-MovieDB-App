@@ -51,15 +51,15 @@
 
 
 <p align="center">
-<img src="screenshots\Screenshot_20210801-142954.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143201.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143317.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143125.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143147.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-142954.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143201.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143317.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143125.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143147.jpg" width="30%">
 
-<img src="screenshots\Screenshot_20210801-143414.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143512.jpg" width="30%"><img src="screenshots\Screenshot_20210801-143026.jpg" width="30%">
-<img src="screenshots\Screenshot_20210801-143038.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143414.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143512.jpg" width="30%"><img src="screenshots/Screenshot_20210801-143026.jpg" width="30%">
+<img src="screenshots/Screenshot_20210801-143038.jpg" width="30%">
 
 </p>
 
