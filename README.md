@@ -29,6 +29,7 @@
    git:
       url: https://github.com/Ansh-Rathod/bottom_nav_bar
  ```
+
 -  cached_network_image: ^3.0.0
 -  cloud_firestore: ^2.4.0
 -  cupertino_icons: ^1.0.2
