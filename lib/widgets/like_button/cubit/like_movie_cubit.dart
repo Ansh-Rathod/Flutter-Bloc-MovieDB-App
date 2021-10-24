@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
-import 'package:moviedb/data/fetch_decvice_info.dart';
-import 'package:moviedb/data/fetch_favorite_repo.dart';
+import '../../../data/fetch_decvice_info.dart';
+import '../../../data/fetch_favorite_repo.dart';
 
 part 'like_movie_state.dart';
 

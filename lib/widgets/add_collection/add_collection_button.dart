@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/data/fetch_decvice_info.dart';
-import 'package:moviedb/screens/add_to_collection_screen/add_to_collection.dart';
+import '../../constants.dart';
+import '../../data/fetch_decvice_info.dart';
+import '../../screens/add_to_collection_screen/add_to_collection.dart';
 
 import 'cubit/collection_cubit.dart';
 

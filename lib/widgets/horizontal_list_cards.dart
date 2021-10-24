@@ -2,13 +2,13 @@ import 'package:bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
-import 'package:moviedb/screens/movie_info_screen/bloc/movie_info_bloc.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
-import 'package:moviedb/screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
-import 'package:moviedb/screens/tvshow_info_screen/tvshow_info_screen.dart';
-import 'package:moviedb/widgets/movie_card.dart';
+import '../models/movie_model.dart';
+import '../models/tv_model.dart';
+import '../screens/movie_info_screen/bloc/movie_info_bloc.dart';
+import '../screens/movie_info_screen/movie_Info_screen.dart';
+import '../screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
+import '../screens/tvshow_info_screen/tvshow_info_screen.dart';
+import 'movie_card.dart';
 
 class HorizontalListViewMovies extends StatelessWidget {
   final List<MovieModel> list;
@@ -48,6 +48,7 @@ class HorizontalListViewMovies extends StatelessWidget {
                         backdrop: list[i].backdrop,
                       ),
                     ),
+                    pageTransitionAnimation: PageTransitionAnimation.fade,
                     withNavBar: false,
                   );
                 },
@@ -89,6 +90,7 @@ class HorizontalListViewTv extends StatelessWidget {
                 onTap: () {
                   pushNewScreen(
                     context,
+                    pageTransitionAnimation: PageTransitionAnimation.fade,
                     withNavBar: false,
                     screen: BlocProvider(
                       create: (context) => TvShowDetailBloc(),

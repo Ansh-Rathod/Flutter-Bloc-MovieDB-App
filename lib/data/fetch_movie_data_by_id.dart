@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
+import '../models/error_model.dart';
+import '../models/movie_model.dart';
+import '../screens/movie_info_screen/movie_Info_screen.dart';
 
 class FetchMovieDataById {
   Future<List<dynamic>> getDetails(String id) async {

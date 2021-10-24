@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:moviedb/data/fetch_season_info.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/season_details_model.dart';
+import '../../../data/fetch_season_info.dart';
+import '../../../models/error_model.dart';
+import '../../../models/movie_model.dart';
+import '../../../models/season_details_model.dart';
 
 part 'season_detail_event.dart';
 part 'season_detail_state.dart';

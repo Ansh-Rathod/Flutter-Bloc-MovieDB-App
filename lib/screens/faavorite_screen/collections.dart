@@ -1,13 +1,13 @@
 import 'package:bottom_nav_bar/persistent-tab-view.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/data/fetch_decvice_info.dart';
-import 'package:moviedb/data/fetch_favorite_repo.dart';
-import 'package:moviedb/screens/movie_info_screen/bloc/movie_info_bloc.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
-import 'package:moviedb/screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
-import 'package:moviedb/screens/tvshow_info_screen/tvshow_info_screen.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
-import 'package:moviedb/widgets/star_icon_display.dart';
+import '../../constants.dart';
+import '../../data/fetch_decvice_info.dart';
+import '../../data/fetch_favorite_repo.dart';
+import '../movie_info_screen/bloc/movie_info_bloc.dart';
+import '../movie_info_screen/movie_Info_screen.dart';
+import '../tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
+import '../tvshow_info_screen/tvshow_info_screen.dart';
+import '../../widgets/no_results_found.dart';
+import '../../widgets/star_icon_display.dart';
 
 import 'bloc/collection_tab_bloc.dart';
 import 'package:cached_network_image/cached_network_image.dart';

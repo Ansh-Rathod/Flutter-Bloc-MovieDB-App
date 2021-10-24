@@ -1,25 +1,26 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../animation.dart';
 import 'package:readmore/readmore.dart';
 
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/data/fetch_color_palette.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
-import 'package:moviedb/screens/season_info_screen/bloc/season_detail_bloc.dart';
-import 'package:moviedb/screens/season_info_screen/season_details_screen.dart';
-import 'package:moviedb/screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
-import 'package:moviedb/widgets/app_bar.dart';
-import 'package:moviedb/widgets/cast_list.dart';
-import 'package:moviedb/widgets/expandable_group.dart';
-import 'package:moviedb/widgets/horizontal_list_cards.dart';
-import 'package:moviedb/widgets/like_button/cubit/like_movie_cubit.dart';
-import 'package:moviedb/widgets/like_button/fav_button.dart';
-import 'package:moviedb/widgets/loading.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
-import 'package:moviedb/widgets/star_icon_display.dart';
-import 'package:moviedb/widgets/trailer_widget.dart';
+import '../../constants.dart';
+import '../../data/fetch_color_palette.dart';
+import '../../models/movie_model.dart';
+import '../../models/tv_model.dart';
+import '../season_info_screen/bloc/season_detail_bloc.dart';
+import '../season_info_screen/season_details_screen.dart';
+import 'bloc/tv_show_detail_bloc.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/cast_list.dart';
+import '../../widgets/expandable_group.dart';
+import '../../widgets/horizontal_list_cards.dart';
+import '../../widgets/like_button/cubit/like_movie_cubit.dart';
+import '../../widgets/like_button/fav_button.dart';
+import '../../widgets/loading.dart';
+import '../../widgets/no_results_found.dart';
+import '../../widgets/star_icon_display.dart';
+import '../../widgets/trailer_widget.dart';
 
 class TvShowDetailScreen extends StatefulWidget {
   final String id;
@@ -118,8 +119,9 @@ class TvInfoScrollableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       color: color,
+      duration: Duration(microseconds: 1000),
       child: CustomScrollView(
         physics: BouncingScrollPhysics(parent: BouncingScrollPhysics()),
         slivers: [
@@ -158,61 +160,70 @@ class TvInfoScrollableWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            RichText(
-                              text: TextSpan(
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 700),
+                              child: RichText(
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: info.title,
+                                      style: heading.copyWith(
+                                          color: textColor, fontSize: 22),
+                                    ),
+                                    TextSpan(
+                                      text: " (${info.date.split("-")[0]})",
+                                      style: heading.copyWith(
+                                        color: textColor.withOpacity(.8),
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 700),
+                              child: RichText(
+                                text: TextSpan(
+                                  style: normalText.copyWith(color: textColor),
+                                  children: [
+                                    ...info.genres
+                                        .map(
+                                          (genre) => TextSpan(text: "$genre, "),
+                                        )
+                                        .toList()
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 700),
+                              child: Row(
                                 children: [
-                                  TextSpan(
-                                    text: info.title,
-                                    style: heading.copyWith(
-                                        color: textColor, fontSize: 22),
-                                  ),
-                                  TextSpan(
-                                    text: " (${info.date.split("-")[0]})",
-                                    style: heading.copyWith(
-                                      color: textColor.withOpacity(.8),
-                                      fontSize: 18,
+                                  IconTheme(
+                                    data: IconThemeData(
+                                      color: textColor == Colors.white
+                                          ? Colors.amber
+                                          : Colors.blue,
+                                      size: 20,
+                                    ),
+                                    child: StarDisplay(
+                                      value: ((info.rateing * 5) / 10).round(),
                                     ),
                                   ),
+                                  Text(
+                                    "  " + info.rateing.toString() + "/10",
+                                    style: normalText.copyWith(
+                                      color: textColor == Colors.white
+                                          ? Colors.amber
+                                          : Colors.blue,
+                                      letterSpacing: 1.2,
+                                    ),
+                                  )
                                 ],
                               ),
-                            ),
-                            SizedBox(height: 5),
-                            RichText(
-                              text: TextSpan(
-                                style: normalText.copyWith(color: textColor),
-                                children: [
-                                  ...info.genres
-                                      .map(
-                                        (genre) => TextSpan(text: "$genre, "),
-                                      )
-                                      .toList()
-                                ],
-                              ),
-                            ),
-                            SizedBox(height: 5),
-                            Row(
-                              children: [
-                                IconTheme(
-                                  data: IconThemeData(
-                                    color: textColor == Colors.white
-                                        ? Colors.amber
-                                        : Colors.blue,
-                                    size: 20,
-                                  ),
-                                  child: StarDisplay(
-                                    value: ((info.rateing * 5) / 10).round(),
-                                  ),
-                                ),
-                                Text(
-                                  "  " + info.rateing.toString() + "/10",
-                                  style: normalText.copyWith(
-                                    color: textColor == Colors.white
-                                        ? Colors.amber
-                                        : Colors.blue,
-                                    letterSpacing: 1.2,
-                                  ),
-                                )
-                              ],
                             ),
                             SizedBox(height: 5),
                             BlocProvider(
@@ -545,18 +556,24 @@ class OverviewWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("Overview", style: heading.copyWith(color: textColor)),
+            DelayedDisplay(
+                delay: Duration(microseconds: 800),
+                child: Text("Overview",
+                    style: heading.copyWith(color: textColor))),
             SizedBox(height: 10),
-            ReadMoreText(
-              info.overview,
-              trimLines: 6,
-              colorClickableText: Colors.pink,
-              trimMode: TrimMode.Line,
-              trimCollapsedText: 'Show more',
-              trimExpandedText: 'Show less',
-              style: normalText.copyWith(
-                  fontWeight: FontWeight.w500, color: textColor),
-              moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            DelayedDisplay(
+              delay: Duration(microseconds: 1000),
+              child: ReadMoreText(
+                info.overview,
+                trimLines: 6,
+                colorClickableText: Colors.pink,
+                trimMode: TrimMode.Line,
+                trimCollapsedText: 'Show more',
+                trimExpandedText: 'Show less',
+                style: normalText.copyWith(
+                    fontWeight: FontWeight.w500, color: textColor),
+                moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),

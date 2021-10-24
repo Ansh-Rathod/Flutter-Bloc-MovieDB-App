@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bottom_nav_bar/persistent-tab-view.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/screens/cast_info_screen/bloc/castinfo_bloc.dart';
-import 'package:moviedb/screens/cast_info_screen/cast_info_screen.dart';
+import '../../../constants.dart';
+import '../../cast_info_screen/bloc/castinfo_bloc.dart';
+import '../../cast_info_screen/cast_info_screen.dart';
 
 import '../../../models/movie_model.dart';
 import '../../../models/people_model.dart';

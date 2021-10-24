@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/constants.dart';
+import '../../constants.dart';
 
 import 'cubit/watchlist_cubit.dart';
 

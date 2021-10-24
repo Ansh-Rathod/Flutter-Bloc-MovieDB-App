@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:dio/dio.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
+import '../models/error_model.dart';
+import '../models/movie_model.dart';
+import '../models/tv_model.dart';
 
 class FetchHomeRepo {
   Future<List<dynamic>> getHomePageMovies() async {

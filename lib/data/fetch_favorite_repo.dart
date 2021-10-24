@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:moviedb/models/favorite_list_model.dart';
+import '../models/favorite_list_model.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 

@@ -5,15 +5,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
-import 'package:moviedb/screens/home_screen/bloc/fetch_home_bloc.dart';
-import 'package:moviedb/widgets/header_text.dart';
-import 'package:moviedb/widgets/horizontal_list_cards.dart';
-import 'package:moviedb/widgets/intro_widget.dart';
-import 'package:moviedb/widgets/movie_card.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
+import '../../constants.dart';
+import '../../models/movie_model.dart';
+import '../../models/tv_model.dart';
+import 'bloc/fetch_home_bloc.dart';
+import '../../widgets/header_text.dart';
+import '../../widgets/horizontal_list_cards.dart';
+import '../../widgets/intro_widget.dart';
+import '../../widgets/movie_card.dart';
+import '../../widgets/no_results_found.dart';
+
+import '../../animation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -130,9 +132,14 @@ class HomeScreenWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              HeaderText(text: "In Theaters"),
-              HorizontalListViewMovies(
-                list: tranding,
+              DelayedDisplay(
+                  delay: Duration(microseconds: 700),
+                  child: HeaderText(text: "In Theaters")),
+              DelayedDisplay(
+                delay: Duration(microseconds: 800),
+                child: HorizontalListViewMovies(
+                  list: tranding,
+                ),
               ),
               HeaderText(text: "Tv shows"),
               HorizontalListViewTv(

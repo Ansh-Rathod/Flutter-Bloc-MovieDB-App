@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:moviedb/models/cast_info_model.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
+import '../models/cast_info_model.dart';
+import '../models/error_model.dart';
+import '../models/movie_model.dart';
+import '../models/tv_model.dart';
 
 class FetchCastInfoById {
   Future<List<dynamic>> getCastDetails(String id) async {

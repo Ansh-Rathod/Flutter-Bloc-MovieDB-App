@@ -1,5 +1,5 @@
-import 'package:moviedb/models/formated_time_genrator.dart';
-import 'package:moviedb/models/movie_model.dart';
+import 'formated_time_genrator.dart';
+import 'movie_model.dart';
 
 class EpisodeModel {
   final String id;

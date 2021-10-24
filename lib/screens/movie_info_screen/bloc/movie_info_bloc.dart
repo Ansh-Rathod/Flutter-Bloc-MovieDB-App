@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:moviedb/data/fetch_color_palette.dart';
-import 'package:moviedb/data/fetch_movie_data_by_id.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
+import '../../../data/fetch_color_palette.dart';
+import '../../../data/fetch_movie_data_by_id.dart';
+import '../../../models/error_model.dart';
+import '../../../models/movie_model.dart';
+import '../movie_Info_screen.dart';
 
 part 'movie_info_event.dart';
 part 'movie_info_state.dart';

@@ -1,5 +1,5 @@
-import 'package:moviedb/models/favorite_list_model.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
+import '../../models/favorite_list_model.dart';
+import '../../widgets/no_results_found.dart';
 
 import 'favorite.dart';
 import 'streams/watchlist_stream.dart';

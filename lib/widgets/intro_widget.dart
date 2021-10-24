@@ -2,15 +2,16 @@ import 'package:bottom_nav_bar/persistent-tab-view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/screens/home_screen/home_screen.dart';
-import 'package:moviedb/screens/movie_info_screen/bloc/movie_info_bloc.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
-import 'package:moviedb/widgets/add_collection/add_collection_button.dart';
-import 'package:moviedb/widgets/add_collection/cubit/collection_cubit.dart';
-import 'package:moviedb/widgets/star_icon_display.dart';
-import 'package:moviedb/widgets/watchlist_button/cubit/watchlist_cubit.dart';
-import 'package:moviedb/widgets/watchlist_button/watchl_ist_button.dart';
+import '../animation.dart';
+import '../models/movie_model.dart';
+import '../screens/home_screen/home_screen.dart';
+import '../screens/movie_info_screen/bloc/movie_info_bloc.dart';
+import '../screens/movie_info_screen/movie_Info_screen.dart';
+import 'add_collection/add_collection_button.dart';
+import 'add_collection/cubit/collection_cubit.dart';
+import 'star_icon_display.dart';
+import 'watchlist_button/cubit/watchlist_cubit.dart';
+import 'watchlist_button/watchl_ist_button.dart';
 
 import '../constants.dart';
 
@@ -34,6 +35,7 @@ class IntroContainer extends StatelessWidget {
               backdrop: tranding.backdrop,
             ),
           ),
+          pageTransitionAnimation: PageTransitionAnimation.fade,
           withNavBar: false,
         );
       },
@@ -199,45 +201,54 @@ class IntroContainer extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              tranding.title,
-                              style: heading.copyWith(
-                                  color: Colors.white, fontSize: 26),
-                            ),
-                            SizedBox(height: 7),
-                            Text(
-                              tranding.releaseDate,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: normalText.copyWith(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white.withOpacity(.8),
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 700),
+                              child: Text(
+                                tranding.title,
+                                style: heading.copyWith(
+                                    color: Colors.white, fontSize: 26),
                               ),
                             ),
                             SizedBox(height: 7),
-                            Row(
-                              children: [
-                                IconTheme(
-                                  data: IconThemeData(
-                                    color: Colors.cyanAccent,
-                                    size: 20,
-                                  ),
-                                  child: StarDisplay(
-                                    value: ((tranding.voteAverage * 5) / 10)
-                                        .round(),
-                                  ),
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 800),
+                              child: Text(
+                                tranding.releaseDate,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: normalText.copyWith(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white.withOpacity(.8),
                                 ),
-                                Text(
-                                  "  " +
-                                      tranding.voteAverage.toString() +
-                                      "/10",
-                                  style: normalText.copyWith(
-                                    color: Colors.cyanAccent,
-                                    letterSpacing: 1.2,
+                              ),
+                            ),
+                            SizedBox(height: 7),
+                            DelayedDisplay(
+                              delay: Duration(microseconds: 900),
+                              child: Row(
+                                children: [
+                                  IconTheme(
+                                    data: IconThemeData(
+                                      color: Colors.cyanAccent,
+                                      size: 20,
+                                    ),
+                                    child: StarDisplay(
+                                      value: ((tranding.voteAverage * 5) / 10)
+                                          .round(),
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  Text(
+                                    "  " +
+                                        tranding.voteAverage.toString() +
+                                        "/10",
+                                    style: normalText.copyWith(
+                                      color: Colors.cyanAccent,
+                                      letterSpacing: 1.2,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),

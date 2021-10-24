@@ -1,9 +1,9 @@
 import 'package:bottom_nav_bar/persistent-tab-view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/screens/faavorite_screen/favorite.dart';
-import 'package:moviedb/screens/home_screen/home_screen.dart';
-import 'package:moviedb/screens/search_screen/search_screen.dart';
+import 'faavorite_screen/favorite.dart';
+import 'home_screen/home_screen.dart';
+import 'search_screen/search_screen.dart';
 
 import 'home_screen/bloc/fetch_home_bloc.dart';
 
@@ -28,7 +28,7 @@ class _BottomNavViewState extends State<BottomNavView> {
     return [
       PersistentBottomNavBarItem(
         inactiveColorPrimary: Colors.grey,
-        iconSize: 26,
+        iconSize: 24,
         icon: Icon(
           Icons.home,
         ),
@@ -37,7 +37,7 @@ class _BottomNavViewState extends State<BottomNavView> {
       ),
       PersistentBottomNavBarItem(
         inactiveColorPrimary: Colors.grey,
-        iconSize: 28,
+        iconSize: 24,
         icon: Icon(
           Icons.search,
         ),
@@ -49,7 +49,7 @@ class _BottomNavViewState extends State<BottomNavView> {
         icon: Icon(
           Icons.favorite,
         ),
-        iconSize: 26,
+        iconSize: 24,
         activeColorPrimary: Colors.cyanAccent,
         title: ("Activity"),
       ),
@@ -58,7 +58,7 @@ class _BottomNavViewState extends State<BottomNavView> {
       //   icon: Icon(
       //     Icons.list,
       //   ),
-      //   iconSize: 26,
+      //   iconSize: 24,
       //   activeColorPrimary: Colors.cyanAccent,
       //   title: ("More"),
       // ),

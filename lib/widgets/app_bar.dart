@@ -1,12 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/widgets/add_collection/add_collection_button.dart';
-import 'package:moviedb/widgets/add_collection/cubit/collection_cubit.dart';
-import 'package:moviedb/widgets/watchlist_button/cubit/watchlist_cubit.dart';
-import 'package:moviedb/widgets/watchlist_button/watchl_ist_button.dart';
+import '../constants.dart';
+import 'add_collection/add_collection_button.dart';
+import 'add_collection/cubit/collection_cubit.dart';
+import 'watchlist_button/cubit/watchlist_cubit.dart';
+import 'watchlist_button/watchl_ist_button.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../animation.dart';
 
 class SliverAppBarWithShadow extends StatelessWidget {
   SliverAppBarWithShadow({

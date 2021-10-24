@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:moviedb/data/fetch_search_results.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/people_model.dart';
-import 'package:moviedb/models/tv_model.dart';
+import '../../../data/fetch_search_results.dart';
+import '../../../models/movie_model.dart';
+import '../../../models/people_model.dart';
+import '../../../models/tv_model.dart';
 
 part 'search_results_event.dart';
 part 'search_results_state.dart';

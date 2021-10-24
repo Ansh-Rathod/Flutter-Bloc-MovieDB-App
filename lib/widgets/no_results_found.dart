@@ -1,4 +1,4 @@
-import 'package:moviedb/constants.dart';
+import '../constants.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:async';
 
-import 'package:moviedb/models/movie_model.dart';
+import '../models/movie_model.dart';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';

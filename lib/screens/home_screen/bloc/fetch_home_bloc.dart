@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:moviedb/data/fetch_home_screen_data.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
+import '../../../data/fetch_home_screen_data.dart';
+import '../../../models/error_model.dart';
+import '../../../models/movie_model.dart';
+import '../../../models/tv_model.dart';
 
 part 'fetch_home_event.dart';
 part 'fetch_home_state.dart';

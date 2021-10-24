@@ -3,12 +3,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/screens/movie_info_screen/bloc/movie_info_bloc.dart';
-import 'package:moviedb/screens/movie_info_screen/movie_Info_screen.dart';
-import 'package:moviedb/screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
-import 'package:moviedb/screens/tvshow_info_screen/tvshow_info_screen.dart';
-import 'package:moviedb/widgets/star_icon_display.dart';
+import '../constants.dart';
+import '../screens/movie_info_screen/bloc/movie_info_bloc.dart';
+import '../screens/movie_info_screen/movie_Info_screen.dart';
+import '../screens/tvshow_info_screen/bloc/tv_show_detail_bloc.dart';
+import '../screens/tvshow_info_screen/tvshow_info_screen.dart';
+import 'star_icon_display.dart';
 
 class MovieCard extends StatelessWidget {
   final String poster;
@@ -127,11 +127,13 @@ class HorizontalMovieCard extends StatelessWidget {
                   backdrop: backdrop,
                 ),
               ),
+              pageTransitionAnimation: PageTransitionAnimation.fade,
               withNavBar: false,
             );
           } else {
             pushNewScreen(
               context,
+              pageTransitionAnimation: PageTransitionAnimation.fade,
               withNavBar: false,
               screen: BlocProvider(
                 create: (context) => TvShowDetailBloc(),

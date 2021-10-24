@@ -2,19 +2,19 @@ import 'package:bottom_nav_bar/persistent-tab-view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/people_model.dart';
-import 'package:moviedb/models/tv_model.dart';
-import 'package:moviedb/screens/cast_info_screen/bloc/castinfo_bloc.dart';
-import 'package:moviedb/screens/cast_info_screen/cast_info_screen.dart';
-import 'package:moviedb/screens/search_screen/bloc/search_results_bloc.dart';
-import 'package:moviedb/screens/search_screen/genre/genre_info.dart';
-import 'package:moviedb/screens/search_screen/search_results/all_movies_search_results.dart';
-import 'package:moviedb/screens/search_screen/search_results/all_people_search_results.dart';
-import 'package:moviedb/screens/search_screen/search_results/all_tv_search_results.dart';
-import 'package:moviedb/widgets/horizontal_list_cards.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
+import '../../constants.dart';
+import '../../models/movie_model.dart';
+import '../../models/people_model.dart';
+import '../../models/tv_model.dart';
+import '../cast_info_screen/bloc/castinfo_bloc.dart';
+import '../cast_info_screen/cast_info_screen.dart';
+import 'bloc/search_results_bloc.dart';
+import 'genre/genre_info.dart';
+import 'search_results/all_movies_search_results.dart';
+import 'search_results/all_people_search_results.dart';
+import 'search_results/all_tv_search_results.dart';
+import '../../widgets/horizontal_list_cards.dart';
+import '../../widgets/no_results_found.dart';
 
 class AllSearchResults extends StatelessWidget {
   @override

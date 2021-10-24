@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'package:moviedb/models/formated_time_genrator.dart';
+import 'formated_time_genrator.dart';
 
 class CastPersonalInfo {
   final String image;

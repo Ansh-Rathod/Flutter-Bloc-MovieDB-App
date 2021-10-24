@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import 'package:moviedb/widgets/movie_card.dart';
+import '../../../widgets/movie_card.dart';
 
 import '../../../constants.dart';
 import '../../../models/movie_model.dart';

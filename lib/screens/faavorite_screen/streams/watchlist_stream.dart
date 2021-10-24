@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:moviedb/data/fetch_favorite_repo.dart';
-import 'package:moviedb/models/favorite_list_model.dart';
+import '../../../data/fetch_favorite_repo.dart';
+import '../../../models/favorite_list_model.dart';
 
 import '../../../models/movie_model.dart';
 import '../../../models/tv_model.dart';

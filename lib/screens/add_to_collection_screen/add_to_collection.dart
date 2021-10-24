@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:moviedb/constants.dart';
+import '../../constants.dart';
 
 class AddToCollection extends StatelessWidget {
   final String title;

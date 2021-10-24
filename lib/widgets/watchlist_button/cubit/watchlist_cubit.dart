@@ -1,5 +1,5 @@
-import 'package:moviedb/data/fetch_decvice_info.dart';
-import 'package:moviedb/data/fetch_watchlist_data.dart';
+import '../../../data/fetch_decvice_info.dart';
+import '../../../data/fetch_watchlist_data.dart';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

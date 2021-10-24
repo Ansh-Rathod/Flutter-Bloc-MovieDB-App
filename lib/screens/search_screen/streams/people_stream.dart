@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:moviedb/data/fetch_genre_data.dart';
+import '../../../data/fetch_genre_data.dart';
 
 import '../../../models/people_model.dart';
 

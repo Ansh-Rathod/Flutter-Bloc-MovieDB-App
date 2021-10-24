@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:moviedb/models/error_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/season_details_model.dart';
+import '../models/error_model.dart';
+import '../models/movie_model.dart';
+import '../models/season_details_model.dart';
 
 class FetchSeasonInfo {
   Future<List<dynamic>> getSeasonDetail(String id, String snum) async {

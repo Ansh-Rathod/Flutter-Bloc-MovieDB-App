@@ -1,16 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../animation.dart';
 
-import 'package:moviedb/data/fetch_color_palette.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/season_details_model.dart';
-import 'package:moviedb/screens/cast_info_screen/cast_info_screen.dart';
-import 'package:moviedb/screens/season_info_screen/bloc/season_detail_bloc.dart';
-import 'package:moviedb/widgets/cast_list.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
-import 'package:moviedb/widgets/star_icon_display.dart';
-import 'package:moviedb/widgets/trailer_widget.dart';
+import '../../data/fetch_color_palette.dart';
+import '../../models/movie_model.dart';
+import '../../models/season_details_model.dart';
+import '../cast_info_screen/cast_info_screen.dart';
+import 'bloc/season_detail_bloc.dart';
+import '../../widgets/cast_list.dart';
+import '../../widgets/no_results_found.dart';
+import '../../widgets/star_icon_display.dart';
+import '../../widgets/trailer_widget.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../constants.dart';
@@ -117,8 +118,9 @@ class SeasonInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       color: color,
+      duration: Duration(microseconds: 1000),
       child: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
@@ -136,23 +138,29 @@ class SeasonInfoWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    info.name,
-                    style: heading.copyWith(color: textColor, fontSize: 24),
+                  DelayedDisplay(
+                    delay: Duration(microseconds: 600),
+                    child: Text(
+                      info.name,
+                      style: heading.copyWith(color: textColor, fontSize: 24),
+                    ),
                   ),
                   SizedBox(height: 5),
-                  RichText(
-                    text: TextSpan(
-                      style: normalText.copyWith(
-                          color: textColor, fontWeight: FontWeight.bold),
-                      children: [
-                        TextSpan(
-                          text: info.customDate + " | ",
-                        ),
-                        TextSpan(
-                          text: info.episodes.length.toString() + " Episodes",
-                        ),
-                      ],
+                  DelayedDisplay(
+                    delay: Duration(microseconds: 600),
+                    child: RichText(
+                      text: TextSpan(
+                        style: normalText.copyWith(
+                            color: textColor, fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: info.customDate + " | ",
+                          ),
+                          TextSpan(
+                            text: info.episodes.length.toString() + " Episodes",
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -168,21 +176,27 @@ class SeasonInfoWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text("Overview", style: heading.copyWith(color: textColor)),
+                  DelayedDisplay(
+                      delay: Duration(microseconds: 700),
+                      child: Text("Overview",
+                          style: heading.copyWith(color: textColor))),
                   SizedBox(height: 10),
-                  ReadMoreText(
-                    info.overview == "N/A"
-                        ? "${info.name} premiered on " + info.customDate
-                        : info.overview,
-                    trimLines: 8,
-                    colorClickableText: Colors.pink,
-                    trimMode: TrimMode.Line,
-                    trimCollapsedText: 'Show more',
-                    trimExpandedText: 'Show less',
-                    style: normalText.copyWith(
-                        fontWeight: FontWeight.w500, color: textColor),
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  DelayedDisplay(
+                    delay: Duration(microseconds: 800),
+                    child: ReadMoreText(
+                      info.overview == "N/A"
+                          ? "${info.name} premiered on " + info.customDate
+                          : info.overview,
+                      trimLines: 8,
+                      colorClickableText: Colors.pink,
+                      trimMode: TrimMode.Line,
+                      trimCollapsedText: 'Show more',
+                      trimExpandedText: 'Show less',
+                      style: normalText.copyWith(
+                          fontWeight: FontWeight.w500, color: textColor),
+                      moreStyle:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),

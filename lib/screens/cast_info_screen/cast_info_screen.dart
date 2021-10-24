@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moviedb/constants.dart';
+import '../../constants.dart';
 
-import 'package:moviedb/data/fetch_color_palette.dart';
-import 'package:moviedb/models/cast_info_model.dart';
-import 'package:moviedb/models/movie_model.dart';
-import 'package:moviedb/models/tv_model.dart';
-import 'package:moviedb/screens/cast_info_screen/bloc/castinfo_bloc.dart';
-import 'package:moviedb/widgets/horizontal_list_cards.dart';
-import 'package:moviedb/widgets/image_view.dart';
-import 'package:moviedb/widgets/no_results_found.dart';
+import '../../data/fetch_color_palette.dart';
+import '../../models/cast_info_model.dart';
+import '../../models/movie_model.dart';
+import '../../models/tv_model.dart';
+import 'bloc/castinfo_bloc.dart';
+import '../../widgets/horizontal_list_cards.dart';
+import '../../widgets/image_view.dart';
+import '../../widgets/no_results_found.dart';
 import 'package:readmore/readmore.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../animation.dart';
 
 class CastInFoScreen extends StatefulWidget {
   final String id;
@@ -117,8 +119,9 @@ class CastScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
       color: color,
+      duration: Duration(microseconds: 1000),
       child: CustomScrollView(
         physics: BouncingScrollPhysics(parent: BouncingScrollPhysics()),
         slivers: [
@@ -136,39 +139,44 @@ class CastScreenWidget extends StatelessWidget {
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (sinfo.facebook != "")
-                      IconButton(
-                        icon: FaIcon(FontAwesomeIcons.facebookSquare, size: 40),
-                        onPressed: () {
-                          launch(sinfo.facebook);
-                        },
-                      ),
-                    if (sinfo.twitter != "")
-                      IconButton(
-                        icon: FaIcon(FontAwesomeIcons.twitterSquare, size: 40),
-                        onPressed: () {
-                          launch(sinfo.twitter);
-                        },
-                      ),
-                    if (sinfo.instagram != "")
-                      IconButton(
-                        icon:
-                            FaIcon(FontAwesomeIcons.instagramSquare, size: 40),
-                        onPressed: () {
-                          launch(sinfo.instagram);
-                        },
-                      ),
-                    if (sinfo.imdbId != "")
-                      IconButton(
-                        icon: FaIcon(FontAwesomeIcons.imdb, size: 40),
-                        onPressed: () {
-                          launch(sinfo.imdbId);
-                        },
-                      ),
-                  ],
+                child: DelayedDisplay(
+                  delay: Duration(microseconds: 600),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (sinfo.facebook != "")
+                        IconButton(
+                          icon:
+                              FaIcon(FontAwesomeIcons.facebookSquare, size: 40),
+                          onPressed: () {
+                            launch(sinfo.facebook);
+                          },
+                        ),
+                      if (sinfo.twitter != "")
+                        IconButton(
+                          icon:
+                              FaIcon(FontAwesomeIcons.twitterSquare, size: 40),
+                          onPressed: () {
+                            launch(sinfo.twitter);
+                          },
+                        ),
+                      if (sinfo.instagram != "")
+                        IconButton(
+                          icon: FaIcon(FontAwesomeIcons.instagramSquare,
+                              size: 40),
+                          onPressed: () {
+                            launch(sinfo.instagram);
+                          },
+                        ),
+                      if (sinfo.imdbId != "")
+                        IconButton(
+                          icon: FaIcon(FontAwesomeIcons.imdb, size: 40),
+                          onPressed: () {
+                            launch(sinfo.imdbId);
+                          },
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -176,89 +184,92 @@ class CastScreenWidget extends StatelessWidget {
           SliverToBoxAdapter(
               child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  "Personal Info",
-                  style: heading.copyWith(color: textColor, fontSize: 22),
-                ),
-                SizedBox(height: 10),
-                Row(
-                  children: [
-                    Flexible(
-                      flex: 2,
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * .5,
+            child: DelayedDisplay(
+              delay: Duration(microseconds: 800),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Personal Info",
+                    style: heading.copyWith(color: textColor, fontSize: 22),
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Flexible(
+                        flex: 2,
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * .5,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Known for",
+                                style: heading.copyWith(
+                                    color: textColor, fontSize: 16),
+                              ),
+                              Text(info.knownfor,
+                                  style: normalText.copyWith(
+                                    color: textColor,
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        flex: 2,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "Known for",
+                              "Gender",
                               style: heading.copyWith(
                                   color: textColor, fontSize: 16),
                             ),
-                            Text(info.knownfor,
+                            Text(info.gender,
                                 style: normalText.copyWith(
                                   color: textColor,
                                 )),
                           ],
                         ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Birthday",
+                        style: heading.copyWith(color: textColor, fontSize: 16),
                       ),
-                    ),
-                    Flexible(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Gender",
-                            style: heading.copyWith(
-                                color: textColor, fontSize: 16),
-                          ),
-                          Text(info.gender,
-                              style: normalText.copyWith(
-                                color: textColor,
-                              )),
-                        ],
+                      Text(info.birthday + " (${info.old})",
+                          style: normalText.copyWith(
+                            color: textColor,
+                          )),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Place of Birth",
+                        style: heading.copyWith(color: textColor, fontSize: 16),
                       ),
-                    )
-                  ],
-                ),
-                SizedBox(height: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Birthday",
-                      style: heading.copyWith(color: textColor, fontSize: 16),
-                    ),
-                    Text(info.birthday + " (${info.old})",
-                        style: normalText.copyWith(
-                          color: textColor,
-                        )),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Place of Birth",
-                      style: heading.copyWith(color: textColor, fontSize: 16),
-                    ),
-                    Text(info.placeOfBirth,
-                        style: normalText.copyWith(
-                          color: textColor,
-                        )),
-                  ],
-                ),
-              ],
+                      Text(info.placeOfBirth,
+                          style: normalText.copyWith(
+                            color: textColor,
+                          )),
+                    ],
+                  ),
+                ],
+              ),
             ),
           )),
           if (images.isNotEmpty)
@@ -267,43 +278,49 @@ class CastScreenWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.all(14.0),
-                    child: Text("Images of " + info.name,
-                        style: heading.copyWith(color: textColor)),
+                  DelayedDisplay(
+                    delay: Duration(microseconds: 900),
+                    child: Padding(
+                      padding: const EdgeInsets.all(14.0),
+                      child: Text("Images of " + info.name,
+                          style: heading.copyWith(color: textColor)),
+                    ),
                   ),
-                  SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        for (var i = 0; i < images.length; i++)
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ViewPhotos(
-                                      imageList: images,
-                                      imageIndex: i,
-                                      color: color,
+                  DelayedDisplay(
+                    delay: Duration(microseconds: 1100),
+                    child: SingleChildScrollView(
+                      physics: BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          for (var i = 0; i < images.length; i++)
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ViewPhotos(
+                                        imageList: images,
+                                        imageIndex: i,
+                                        color: color,
+                                      ),
                                     ),
-                                  ),
-                                );
-                              },
-                              child: Container(
-                                height: 200,
-                                color: Colors.black,
-                                width: 130,
-                                child: CachedNetworkImage(
-                                    fit: BoxFit.cover,
-                                    imageUrl: images[i].image),
+                                  );
+                                },
+                                child: Container(
+                                  height: 200,
+                                  color: Colors.black,
+                                  width: 130,
+                                  child: CachedNetworkImage(
+                                      fit: BoxFit.cover,
+                                      imageUrl: images[i].image),
+                                ),
                               ),
-                            ),
-                          )
-                      ],
+                            )
+                        ],
+                      ),
                     ),
                   ),
                 ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moviedb/constants.dart';
-import 'package:moviedb/widgets/movie_card.dart';
+import '../../../constants.dart';
+import '../../../widgets/movie_card.dart';
 
 import '../../../models/movie_model.dart';
 import '../../../models/tv_model.dart';
