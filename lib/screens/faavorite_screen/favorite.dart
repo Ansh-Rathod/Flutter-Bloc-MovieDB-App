@@ -29,6 +29,7 @@ class ActivityTab extends StatefulWidget {
 class _ActivityTabState extends State<ActivityTab> {
   int currentPage = 0;
   late PageController controller;
+
   @override
   void initState() {
     controller = PageController(initialPage: currentPage);
@@ -323,6 +324,7 @@ class _FavoritesState extends State<Favorites> {
 class FavoriteMovieContainer extends StatefulWidget {
   final FavoriteWatchListModel movie;
   final bool isFavorite;
+
   const FavoriteMovieContainer({
     Key? key,
     required this.movie,
@@ -435,10 +437,14 @@ class _FavoriteMovieContainerState extends State<FavoriteMovieContainer> {
                                                     .round(),
                                           ),
                                         ),
+                                        // Try to avoid the spacing is fixed
+                                        // using Expanded can make it automatically and elastically adjust
+                                        Expanded(child: SizedBox()),
                                         Text(
-                                          "  " +
-                                              widget.movie.rate.toString() +
-                                              "/10",
+                                          // "  " +
+                                          //     widget.movie.rate.toString() +
+                                          //     "/10",
+                                          widget.movie.rate.toString() + "/10",
                                           style: normalText.copyWith(
                                             color: Colors.cyanAccent,
                                             letterSpacing: 1.2,
