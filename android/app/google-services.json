@@ -1,0 +1,39 @@
+{
+    "project_info": {
+      "project_number": "990060317592",
+      "project_id": "amdl-d7b23",
+      "storage_bucket": "amdl-d7b23.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:990060317592:android:86447dfbec5e9ae78d39ed",
+          "android_client_info": {
+            "package_name": "com.example.moviedb"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "990060317592-oa376ntmitdr6pbpm135qvc9ed9bh874.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyDnFPT3IZBoE55tErnJwTMW_T9IL5LMhjM"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "990060317592-oa376ntmitdr6pbpm135qvc9ed9bh874.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }
