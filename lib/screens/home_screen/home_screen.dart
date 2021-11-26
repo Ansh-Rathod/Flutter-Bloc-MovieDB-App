@@ -105,33 +105,6 @@ class HomeScreenWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 550,
-                foregroundDecoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    end: Alignment.bottomCenter,
-                    begin: Alignment.bottomCenter,
-                    colors: [
-                      scaffoldColor.withOpacity(.5),
-                      Colors.transparent,
-                    ],
-                  ),
-                ),
-                child: PageView(
-                  scrollDirection: Axis.horizontal,
-                  dragStartBehavior: DragStartBehavior.start,
-                  physics:
-                      BouncingScrollPhysics(parent: BouncingScrollPhysics()),
-                  children: [
-                    for (var i = 0; i < tranding.length; i++)
-                      Center(
-                        child: IntroContainer(
-                          tranding: tranding[i],
-                        ),
-                      ),
-                  ],
-                ),
-              ),
               DelayedDisplay(
                   delay: Duration(microseconds: 700),
                   child: HeaderText(text: "In Theaters")),
