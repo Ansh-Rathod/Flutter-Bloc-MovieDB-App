@@ -7,12 +7,12 @@ Note: App is updated to version 1.0.1 you can find other versions in release.
 # Changelog
 
 - removed cloud firestore as database.
-- added hive_flutter as local database to store favorites for fast data fetching.
-- added proxy server to hide Api-key and get all data in one single request(backend folder -You can deploy it to heroku).
-- migrated old flutter code base (2.2.3) to latest 2.8.0 app.
-- added youtube_player_flutter library to watch trailers.
+- added hive_flutter as a local database to store favorites for fast data fetching.
+- added proxy server to hide API-key and get all data in one single request(backend folder -You can deploy it to Heroku).
+- migrated the old flutter code base (2.2.3) to the latest 2.8.0 app.
+- added a youtube_player_flutter library to watch trailers.
 - removed dynamic theming.
-- added new glassy effect to each page and new theme for home page.
+- added a new glassy effect to each page and a new theme for the home page.
 - added data caching for movies and tv shows.
 - added image download feature. (backdrops, logos, posters)
 - new animations.
