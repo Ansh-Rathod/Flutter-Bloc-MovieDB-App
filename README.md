@@ -1,6 +1,6 @@
 # MovieDB
 
-Note: App is updated to version 1.0.1 you can find other versions by changing branch or in release.
+Note: App is updated to version 1.0.1 you can find other versions in release.
 
 # Changelog
 
