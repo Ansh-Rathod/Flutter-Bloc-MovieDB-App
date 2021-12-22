@@ -3,6 +3,7 @@ Find The Latest trending and upcoming movies and tv shows with MovieDB app. The 
 
 Note: App is updated to version 1.0.1 you can find other versions in release.
 
+<a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release file</a>
 # Changelog
 
 - removed cloud firestore as database.
