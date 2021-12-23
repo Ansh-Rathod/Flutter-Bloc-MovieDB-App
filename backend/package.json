@@ -1,0 +1,25 @@
+{
+	"name": "movieapi",
+	"version": "1.0.0",
+	"description": "A proxy server for the movie database api.",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index",
+		"dev": "nodemon index"
+	},
+	"author": "Ansh rathod",
+	"type": "module",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.24.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	},
+	"engines": {
+		"node": "17.0.1"
+	}
+}
