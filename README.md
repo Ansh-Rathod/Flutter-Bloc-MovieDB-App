@@ -1,18 +1,19 @@
 # MovieDB
 Find The Latest trending and upcoming movies and tv shows with MovieDB app. The app contains all info about movies and tv shows. find similar movies or shows, Browse all genres, video trailers, backdrops, logos, and posters.
 
-Note: App is updated to version 1.0.1 you can find other versions in release.
+<a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release app</a>
 
-<a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release file</a>
+Note: App is updated to version 1.0.1 you can find other versions by changing branch or in release.
+
 # Changelog
 
 - removed cloud firestore as database.
-- added hive_flutter as a local database to store favorites for fast data fetching.
-- added proxy server to hide API-key and get all data in one single request(backend folder -You can deploy it to Heroku).
-- migrated the old flutter code base (2.2.3) to the latest 2.8.0 app.
-- added a youtube_player_flutter library to watch trailers.
+- added hive_flutter as local database to store favorites for fast data fetching.
+- added proxy server to hide Api-key and get all data in one single request(backend folder -You can deploy it to heroku).
+- migrated old flutter code base (2.2.3) to latest 2.8.0 app.
+- added youtube_player_flutter library to watch trailers.
 - removed dynamic theming.
-- added a new glassy effect to each page and a new theme for the home page.
+- added new glassy effect to each page and new theme for home page.
 - added data caching for movies and tv shows.
 - added image download feature. (backdrops, logos, posters)
 - new animations.
@@ -37,6 +38,19 @@ Note: App is updated to version 1.0.1 you can find other versions in release.
 - Movies on bases of keyword
 - Recommendation and similar movie
 
+<p align="center">
+<img src="screenshots/1640179162978.png" width="30%">
+<img src="screenshots/1640179148024.png" width="30%">
+<img src="screenshots/1640179172631.png" width="30%">
+<img src="screenshots/1640179179700.png" width="30%">
+<img src="screenshots/1640179186128.png" width="30%">
+<img src="screenshots/1640179193240.png" width="30%">
+<img src="screenshots/1640179202803.png" width="30%">
+<img src="screenshots/1640179207829.png" width="30%">
+<img src="screenshots/1640179366140.png" width="30%">
+
+</p>
+
 **Packages used:**
 
 - cupertino_icons: ^1.0.2
@@ -59,26 +73,31 @@ Note: App is updated to version 1.0.1 you can find other versions in release.
   - git:
   - url: https://github.com/anshrathod-blog/youtube_player_flutter
 
-<p align="center">
-<img src="screenshots/1640179162978.png" width="30%">
-<img src="screenshots/1640179148024.png" width="30%">
-<img src="screenshots/1640179172631.png" width="30%">
-<img src="screenshots/1640179179700.png" width="30%">
-<img src="screenshots/1640179186128.png" width="30%">
-<img src="screenshots/1640179193240.png" width="30%">
-<img src="screenshots/1640179202803.png" width="30%">
-<img src="screenshots/1640179207829.png" width="30%">
-<img src="screenshots/1640179366140.png" width="30%">
-
-</p>
-
 ## How to use
+
+frist you need to setup proxy server for app.
+
+1. deploy backend folder to server.
+
+2. add Envirnoment variables to your deploy server.
+
+PS: You can easily deploy this server to heroku.
+Tutorial link: https://devcenter.heroku.com/articles/deploying-nodejs
+
+```
+API_KEY = "?api_key=<Your tmdb api key>"
+OMDB_API_KEY="<your ombd api key>"
+```
 
 To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
 
 ```
 # Clone this repository
 $ git clone https://github.com/Appii00/Flutter-Bloc-MovieDB-App.git
+```
+
+```
+# go to lib/api/key.dart and paste your deployed server link to BASE_URL
 ```
 
 ```
