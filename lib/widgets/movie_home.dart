@@ -141,65 +141,66 @@ class _MoviesPageState extends State<MoviesPage> {
                               ));
                         },
                         child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 12.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    clipBehavior: Clip.hardEdge,
-                                    decoration: BoxDecoration(
-                                      boxShadow: kElevationToShadow[8],
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  clipBehavior: Clip.hardEdge,
+                                  decoration: BoxDecoration(
+                                    boxShadow: kElevationToShadow[8],
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: DelayedDisplay(
+                                    delay: const Duration(microseconds: 800),
+                                    slidingBeginOffset:
+                                        const Offset(0.0, -0.01),
+                                    child: ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: DelayedDisplay(
-                                      delay: const Duration(microseconds: 800),
-                                      slidingBeginOffset:
-                                          const Offset(0.0, -0.01),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: CachedNetworkImage(
-                                            imageUrl: movie.backdrop,
-                                            width: double.infinity,
-                                            height: (MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    .38) *
-                                                .6,
-                                            progressIndicatorBuilder: (context,
-                                                    url, downloadProgress) =>
-                                                Container(
-                                                  color: Colors.grey.shade900,
-                                                ),
-                                            fit: BoxFit.cover),
-                                      ),
+                                      child: CachedNetworkImage(
+                                          imageUrl: movie.backdrop,
+                                          width: double.infinity,
+                                          height: (MediaQuery.of(context)
+                                                      .size
+                                                      .height *
+                                                  .38) *
+                                              .6,
+                                          progressIndicatorBuilder: (context,
+                                                  url, downloadProgress) =>
+                                              Container(
+                                                color: Colors.grey.shade900,
+                                              ),
+                                          fit: BoxFit.cover),
                                     ),
                                   ),
-                                  const SizedBox(height: 20),
-                                  if (_current == widget.movies.indexOf(movie))
-                                    DelayedDisplay(
-                                      delay: const Duration(microseconds: 800),
-                                      slidingBeginOffset:
-                                          const Offset(0.0, -0.10),
-                                      child: Text(
-                                        movie.title,
-                                        maxLines: 2,
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                            overflow: TextOverflow.ellipsis,
-                                            fontSize: 18.0,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                ),
+                                const SizedBox(height: 20),
+                                if (_current == widget.movies.indexOf(movie))
+                                  DelayedDisplay(
+                                    delay: const Duration(microseconds: 800),
+                                    slidingBeginOffset:
+                                        const Offset(0.0, -0.10),
+                                    child: Text(
+                                      movie.title,
+                                      maxLines: 2,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                          overflow: TextOverflow.ellipsis,
+                                          fontSize: 18.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  const SizedBox(height: 6),
-                                  if (_current == widget.movies.indexOf(movie))
-                                    DelayedDisplay(
+                                  ),
+                                const SizedBox(height: 6),
+                                if (_current == widget.movies.indexOf(movie))
+                                  Expanded(
+                                    flex: 1,
+                                    child: DelayedDisplay(
                                       delay: const Duration(microseconds: 900),
                                       slidingBeginOffset:
                                           const Offset(0.0, -0.10),
@@ -210,9 +211,11 @@ class _MoviesPageState extends State<MoviesPage> {
                                             fontSize: 16),
                                       ),
                                     ),
-                                ],
-                              ),
-                            )),
+                                  ),
+                              ],
+                            ),
+                          ),
+                        ),
                       );
                     },
                   );
