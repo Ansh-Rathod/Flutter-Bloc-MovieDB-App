@@ -1,11 +1,14 @@
 # MovieDB
+
 Find The Latest trending and upcoming movies and tv shows with MovieDB app. The app contains all info about movies and tv shows. find similar movies or shows, Browse all genres, video trailers, backdrops, logos, and posters.
 
-<a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release app</a>
+<!-- <a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release app</a> -->
 
 Note: App is updated to version 1.0.1 you can find other versions by changing branch or in release.
 
 # Changelog
+
+#### version 1.0.1
 
 - removed cloud firestore as database.
 - added hive_flutter as local database to store favorites for fast data fetching.
@@ -18,6 +21,10 @@ Note: App is updated to version 1.0.1 you can find other versions by changing br
 - added image download feature. (backdrops, logos, posters)
 - new animations.
 - removed palette_generator package.
+
+Note: _**last updated september 2022 configured project to latest flutter version 3.3.2**_
+
+<br/>
 
 ## App Features.
 
@@ -69,9 +76,6 @@ Note: App is updated to version 1.0.1 you can find other versions by changing br
 - fluttertoast: ^8.0.8
 - photo_view: ^0.13.0
 - carousel_slider: ^4.0.0
-- youtube_player_flutter:
-  - git:
-  - url: https://github.com/anshrathod-blog/youtube_player_flutter
 
 ## How to use
 
