@@ -17,18 +17,14 @@ class FetchTvShowDetail {
     CastInfoList castInfoList;
     TvModelList similarshows;
     var box = Hive.box('Tv');
-    var string = json.encode(box.get(id));
+    dynamic tv;
+    var res = await http.get(Uri.parse('$BASE_URL/tv/$id'));
 
-    var tv = json.decode(string);
-    if (tv == null) {
-      var res = await http.get(Uri.parse('$BASE_URL/tv/$id'));
-
-      if (res.statusCode == 200) {
-        tv = jsonDecode(res.body);
-        box.put(id, jsonDecode(res.body));
-      } else {
-        throw FetchDataError('Something went wrong');
-      }
+    if (res.statusCode == 200) {
+      tv = jsonDecode(res.body);
+      box.put(id, jsonDecode(res.body));
+    } else {
+      throw FetchDataError('Something went wrong');
     }
 
     info = TvInfoModel.fromJson(tv['data']);

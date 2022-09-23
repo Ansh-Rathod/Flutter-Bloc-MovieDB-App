@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../animation.dart';
 import '../constants.dart';
 import '../models/movie_model.dart';
-import 'video_player.dart';
 
 class TrailersWidget extends StatelessWidget {
   const TrailersWidget({
@@ -46,13 +46,8 @@ class TrailersWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(16.0),
                       child: InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => VideoPlayer(
-                                id: trailers[i].key,
-                              ),
-                            ),
-                          );
+                          launch(
+                              'https://www.youtube.com/watch?v=${trailers[i].id}');
                         },
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,

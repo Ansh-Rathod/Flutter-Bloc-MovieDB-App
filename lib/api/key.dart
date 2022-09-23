@@ -1,2 +1,2 @@
 // ignore: constant_identifier_names
-const String BASE_URL = "<Your deployed url>/api/v1";
+const String BASE_URL = "https://mysterious-plateau-22499.herokuapp.com/api/v1";

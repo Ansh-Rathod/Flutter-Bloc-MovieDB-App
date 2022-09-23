@@ -16,17 +16,12 @@ class FetchMovieDataById {
     CastInfoList castData;
     MovieModelList similarData;
     var images = [];
-    var box = Hive.box('Movies');
-    var string = json.encode(box.get(id));
-    var movie = json.decode(string);
-    if (movie == null) {
-      var response = await http.get(Uri.parse('$BASE_URL/movie/$id'));
-      if (response.statusCode == 200) {
-        movie = jsonDecode(response.body);
-        await box.put(id, jsonDecode(response.body));
-      } else {
-        throw FetchDataError('Something went wrong');
-      }
+    dynamic movie;
+    var response = await http.get(Uri.parse('$BASE_URL/movie/$id'));
+    if (response.statusCode == 200) {
+      movie = jsonDecode(response.body);
+    } else {
+      throw FetchDataError('Something went wrong');
     }
 
     movieData = MovieInfoModel.fromJson(movie['data']);

@@ -1,8 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.movieinfo">
-    <uses-permission android:name="android.permission.INTERNET" /> 
+    package="com.example.moviedb">
    <application
-        android:label="MovieDB"
+        android:label="moviedb"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -25,16 +24,6 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-                   <intent-filter android:autoVerify="true">
-      <action android:name="android.intent.action.VIEW" />
-      <category android:name="android.intent.category.DEFAULT" />
-      <category android:name="android.intent.category.BROWSABLE" />
-      <data 
-        android:scheme="https"
-        android:host="anshrathod.vercel.app"
-        android:pathPrefix="/moviedb"
-         />
-   </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
