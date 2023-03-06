@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../animation.dart';
@@ -71,60 +72,61 @@ class HomeScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      extendBody: true,
-      extendBodyBehindAppBar: true,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            MoviesPage(movies: tranding),
-            const DelayedDisplay(
-                delay: Duration(microseconds: 800),
-                child: HeaderText(text: "In Theaters")),
-            DelayedDisplay(
-              delay: const Duration(microseconds: 800),
-              child: HorizontalListViewMovies(
-                list: tranding,
+    return AnnotatedRegion(
+      value: SystemUiOverlayStyle.light,
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              MoviesPage(movies: tranding),
+              const DelayedDisplay(
+                  delay: Duration(microseconds: 800),
+                  child: HeaderText(text: "In Theaters")),
+              DelayedDisplay(
+                delay: const Duration(microseconds: 800),
+                child: HorizontalListViewMovies(
+                  list: tranding,
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            const HeaderText(text: "Tv shows"),
-            HorizontalListViewTv(
-              list: tvShows,
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            const HeaderText(text: "Top Rated"),
-            HorizontalListViewMovies(
-              list: topRated,
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            const HeaderText(text: "Top rated Tv shows"),
-            HorizontalListViewTv(
-              list: topShows,
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            const HeaderText(text: "Upcoming"),
-            HorizontalListViewMovies(
-              list: upcoming,
-            ),
-            const SizedBox(
-              height: 14,
-            ),
-            const HeaderText(text: "Now playing"),
-            HorizontalListViewMovies(
-              list: nowPlaying,
-            )
-          ],
+              const SizedBox(
+                height: 14,
+              ),
+              const HeaderText(text: "Tv shows"),
+              HorizontalListViewTv(
+                list: tvShows,
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              const HeaderText(text: "Top Rated"),
+              HorizontalListViewMovies(
+                list: topRated,
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              const HeaderText(text: "Top rated Tv shows"),
+              HorizontalListViewTv(
+                list: topShows,
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              const HeaderText(text: "Upcoming"),
+              HorizontalListViewMovies(
+                list: upcoming,
+              ),
+              const SizedBox(
+                height: 14,
+              ),
+              const HeaderText(text: "Now playing"),
+              HorizontalListViewMovies(
+                list: nowPlaying,
+              )
+            ],
+          ),
         ),
       ),
     );

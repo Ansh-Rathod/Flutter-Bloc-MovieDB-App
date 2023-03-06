@@ -36,10 +36,11 @@ class MyApp extends StatelessWidget {
       ),
       builder: (context, child) {
         return MediaQuery(
-          child: ScrollConfiguration(
-            behavior: NoGlowBehavior(),
-            child: child!,
-          ),
+          // child: ScrollConfiguration(
+          //   behavior: NoGlowBehavior(),
+          //   child: child!,
+          // ),
+          child: child!,
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
         );
       },
@@ -48,13 +49,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class NoGlowBehavior extends ScrollBehavior {
-  @override
-  Widget buildViewportChrome(
-    BuildContext context,
-    Widget child,
-    AxisDirection axisDirection,
-  ) {
-    return child;
-  }
-}
+// class NoGlowBehavior extends ScrollBehavior {
+//   Widget buildViewportChrome(
+//     BuildContext context,
+//     Widget child,
+//     AxisDirection axisDirection,
+//   ) {
+//     return child;
+//   }
+// }

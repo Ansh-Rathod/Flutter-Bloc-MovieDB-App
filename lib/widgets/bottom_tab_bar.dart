@@ -7,7 +7,7 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/cupertino.dart';
 
 // Standard iOS 10 tab bar height.
-const double _kTabBarHeight = 50.0;
+const double _kTabBarHeight = 55.0;
 
 const Color _kDefaultTabBarBorderColor = CupertinoDynamicColor.withBrightness(
   color: Color(0x4C000000),

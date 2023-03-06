@@ -22,7 +22,6 @@ class HorizontalListViewMovies extends StatelessWidget {
         height: 310,
         child: ListView(
           shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           children: [
             const SizedBox(width: 7),
@@ -66,7 +65,6 @@ class HorizontalListViewTv extends StatelessWidget {
         height: 310,
         child: ListView(
           shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           children: [
             const SizedBox(width: 7),

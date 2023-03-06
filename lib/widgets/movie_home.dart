@@ -3,12 +3,10 @@ import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../animation.dart';
 import '../constants.dart';
 import '../models/movie_model.dart';
-import '../screens/movie_info_screen/bloc/movie_info_bloc.dart';
 import '../screens/movie_info_screen/movie_Info_screen.dart';
 
 class MoviesPage extends StatefulWidget {

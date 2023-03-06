@@ -404,7 +404,6 @@ class CastScreenWidget extends StatelessWidget {
                           DelayedDisplay(
                             delay: const Duration(microseconds: 1100),
                             child: SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
                               scrollDirection: Axis.horizontal,
                               child: Row(
                                 children: [

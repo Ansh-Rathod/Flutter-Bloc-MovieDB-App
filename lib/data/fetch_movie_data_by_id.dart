@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart' as http;
 
 import '../api/key.dart';

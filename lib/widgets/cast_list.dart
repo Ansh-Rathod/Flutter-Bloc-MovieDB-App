@@ -21,7 +21,6 @@ class CastList extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(minHeight: 300, maxHeight: 320),
       child: ListView(
-        physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: [

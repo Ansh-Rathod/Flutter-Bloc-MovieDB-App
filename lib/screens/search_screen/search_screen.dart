@@ -21,7 +21,6 @@ class SearchPage extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
           children: [
             const SizedBox(
               height: 50,
