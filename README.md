@@ -3,8 +3,8 @@
 Find The Latest trending and upcoming movies and tv shows with MovieDB app. The app contains all info about movies and tv shows. find similar movies or shows, Browse all genres, video trailers, backdrops, logos, and posters.
 
 <!-- <a href="https://github.com/Ansh-Rathod/Flutter-Bloc-MovieDB-App/releases/download/v1.0.1/app-armeabi-v7a-release.apk">Download Release app</a> -->
-
-Note: App is updated to version 1.0.1 you can find other versions by changing branch or in release.
+<!-- 
+Note: App is updated to version 1.0.1 you can find other versions by changing branch or in release. -->
 
 # Changelog
 
@@ -22,7 +22,7 @@ Note: App is updated to version 1.0.1 you can find other versions by changing br
 - new animations.
 - removed palette_generator package.
 
-Note: _**last updated september 2022 configured project to latest flutter version 3.3.2**_
+Note: _**last updated march 2023 configured project to latest flutter version 3.7.3**_
 
 <br/>
 
